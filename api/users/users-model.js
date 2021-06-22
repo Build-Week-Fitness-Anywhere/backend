@@ -1,19 +1,19 @@
 const db = require('../data/db-config');
 
 function find() {
-  return db('users').select('users.user_id', 'users.username', 'users.role');
+  return db('users').select('user_id', 'username', 'role');
 }
 
-function findById(id) {
+function findById(user_id) {
   return db('users')
-    .select('users.user_id', 'users.username', 'users.password', 'users.role')
-    .where('users.user_id', id)
+    .select('user_id', 'username', 'password', 'role')
+    .where('user_id', user_id)
     .first();
 }
 
 function findBy(filter) {
   return db('users')
-    .select('users.user_id', 'users.username', 'users.password', 'users.role')
+    .select('user_id', 'username', 'password', 'role')
     .where(filter);
 }
 

@@ -17,6 +17,24 @@ const restricted = (req, res, next) => {
   }
 };
 
+const checkIfString = (req, res, next) => {
+  if (typeof req.body.username === 'string') {
+    next();
+  } else {
+    res.status(422).json({ message: 'username must be a string' });
+  }
+};
+
+const checkRegistration = (req, res, next) => {
+  if (!req.body.username || !req.body.password || !req.body.role) {
+    res.status(422).json({ message: 'username, role, and password required' });
+  } else {
+    next();
+  }
+};
+
 module.exports = {
   restricted,
+  checkIfString,
+  checkRegistration,
 };

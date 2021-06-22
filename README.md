@@ -52,7 +52,7 @@ what you get back:
 
 ---
 
-### GET - Get All Equipment
+### GET - Get All Classes
 
 <details>
 <summary>https://use-my-tech-app.herokuapp.com/api/classes</summary>

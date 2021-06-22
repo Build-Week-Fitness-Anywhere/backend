@@ -55,7 +55,7 @@ what you get back:
 ### GET - Get All Classes
 
 <details>
-<summary>https://use-my-tech-app.herokuapp.com/api/classes</summary>
+<summary>https://fittnesslambda.herokuapp.com/api/classes</summary>
     
 ```JSON
 Returns ALL classes with associated instructor username and id. Anyone can make this call.

@@ -2,7 +2,7 @@
 
 ### POST - Create Account
 
-create a user with role type of renter or owner
+create a user with role type of instructor or client
 
 <details>
 <summary>https://fittnesslambda.herokuapp.com/api/auth/register</summary>

@@ -43,7 +43,8 @@ what you need:
 what you get back:
 {
     "message": "Welcome, Foo",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxLCJ1c2VybmFtZSI6IkZvbyIsInJvbGUiOiJpbnN0cnVjdG9yIiwiaWF0IjoxNjI0MzgwNjgzLCJleHAiOjE2MjQ0NjcwODN9.h2YESaVK5ZHT-pYHiutFYnI7HnoYxNm1nIH87sW5iiw"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxLCJ1c2VybmFtZSI6IkZvbyIsInJvbGUiOiJpbnN0cnVjdG9yIiwiaWF0IjoxNjI0MzgwNjgzLCJleHAiOjE2MjQ0NjcwODN9.h2YESaVK5ZHT-pYHiutFYnI7HnoYxNm1nIH87sW5iiw",
+    "role": "instructor"
 }
 ```
 

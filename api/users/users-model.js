@@ -18,8 +18,13 @@ function findBy(filter) {
 }
 
 async function add(user) {
-  const [user_id] = await db('users').insert(user);
-  return findById(user_id);
+  const stuff = await db('users').insert(user, [
+    'user_id',
+    'username',
+    'password',
+    'role',
+  ]);
+  return stuff;
 }
 
 module.exports = {

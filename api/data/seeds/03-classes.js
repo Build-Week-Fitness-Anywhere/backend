@@ -10,7 +10,7 @@ exports.seed = function (knex) {
         location: 'East Gym',
         attendees: '12',
         max_size: '20',
-        user_id: 2,
+        user_id: 1,
       },
       {
         name: 'Get Swoll',
@@ -21,7 +21,7 @@ exports.seed = function (knex) {
         location: 'East Gym',
         attendees: '8',
         max_size: '10',
-        user_id: 2,
+        user_id: 1,
       },
     ]);
   });

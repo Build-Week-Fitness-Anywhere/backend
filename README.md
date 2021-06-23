@@ -167,6 +167,17 @@ what you get back:
 ```JSON
 Adds new class. Only logged in instructors can make this call.
 
+what it expects:
+
+{       "name": "Get Swoll5",
+        "type": "strength training4",
+        "start_time": "1:00pm",
+        "duration": "50 mins",
+        "level": "intermediate",
+        "location": "East Gym",
+        "attendees": "8",
+        "max_size": "10" }
+
 what you get back:
  {
         "instructor": {

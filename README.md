@@ -62,35 +62,67 @@ Returns ALL classes with associated instructor username and id. Anyone can make 
 
 what you get back:
 
-    [
-        {
-            "instructor": {
-                "id": 1,
-                "username": "Foo"
-            },
-            "class_id": 2,
-            "name": "Get Swoll",
-            "type": "strength training",
-            "start_time": "1:00pm",
-            "duration": "50 mins",
-            "level": "intermediate",
-            "location": "East Gym",
-            "attendees": "8",
-            "max_size": "10"
+[
+{
+"instructor": {
+"id": 1,
+"username": "Foo"
+},
+"class_id": 2,
+"name": "Get Swoll",
+"type": "strength training",
+"start_time": "1:00pm",
+"duration": "50 mins",
+"level": "intermediate",
+"location": "East Gym",
+"attendees": "8",
+"max_size": "10"
+},
+{
+"instructor": {
+"id": 1,
+"username": "Foo"
+},
+"class_id": 1,
+"name": "Pump up the Jam",
+"type": "cardio",
+"start_time": "8:00am",
+"duration": "50 mins",
+"level": "beginner",
+"location": "East Gym",
+"attendees": "12",
+"max_size": "20"
+}
+]
+
+````
+</details>
+
+--------------------------------------------------------------------
+
+### GET - Get Class By Id
+<details>
+<summary>https://fittnesslambda.herokuapp.com/api/classes/:class_id</summary>
+
+```JSON
+Returns specific class and associated instructor username and id. Anyone can make this call.
+
+what you get back:
+ {
+        "instructor": {
+            "id": 1,
+            "username": "Foo"
         },
-        {
-            "instructor": {
-                "id": 1,
-                "username": "Foo"
-            },
-            "class_id": 1,
-            "name": "Pump up the Jam",
-            "type": "cardio",
-            "start_time": "8:00am",
-            "duration": "50 mins",
-            "level": "beginner",
-            "location": "East Gym",
-            "attendees": "12",
-            "max_size": "20"
-        }
-    ]
+        "class_id": 2,
+        "name": "Get Swoll",
+        "type": "strength training",
+        "start_time": "1:00pm",
+        "duration": "50 mins",
+        "level": "intermediate",
+        "location": "East Gym",
+        "attendees": "8",
+        "max_size": "10"
+    },
+````
+
+</details>

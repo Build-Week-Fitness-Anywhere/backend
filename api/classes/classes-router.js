@@ -13,4 +13,14 @@ router.get('/', async (req, res, next) => {
   }
 });
 
+router.get('/:class_id', async (req, res, next) => {
+  try {
+    const { class_id } = req.params;
+    const course = await Classes.getClassById(class_id);
+    res.status(200).json(course);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

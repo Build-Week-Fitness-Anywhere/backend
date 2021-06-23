@@ -34,6 +34,40 @@ async function getClasses() {
   return result;
 }
 
+async function getClassById(class_id) {
+  const course = await db('classes as c')
+    .join('users as u', 'c.user_id', 'u.user_id')
+    .select(
+      'u.user_id',
+      'u.username',
+      'c.class_id',
+      'c.name',
+      'c.type',
+      'c.start_time',
+      'c.duration',
+      'c.level',
+      'c.location',
+      'c.attendees',
+      'c.max_size'
+    )
+    .where('class_id', class_id)
+    .first();
+
+  return {
+    instructor: { id: course.user_id, username: course.username },
+    class_id: course.class_id,
+    name: course.name,
+    type: course.type,
+    start_time: course.start_time,
+    duration: course.duration,
+    level: course.level,
+    location: course.location,
+    attendees: course.attendees,
+    max_size: course.max_size,
+  };
+}
+
 module.exports = {
   getClasses,
+  getClassById,
 };

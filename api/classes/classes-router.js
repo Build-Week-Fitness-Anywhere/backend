@@ -107,6 +107,20 @@ router.post(
 //   }
 // });
 
+router.put('/:class_id', (req, res, next) => {
+  const changes = req.body;
+  const { class_id } = req.params;
+  Classes.updateById(class_id, changes)
+    .then((course) => {
+      if (course) {
+        res.status(200).json(course);
+      } else {
+        res.status(404).json({ message: 'The class could not be found' });
+      }
+    })
+    .catch(next);
+});
+
 router.delete(
   '/:class_id',
   restricted,

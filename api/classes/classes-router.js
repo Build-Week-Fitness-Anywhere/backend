@@ -115,7 +115,7 @@ router.put('/:class_id', (req, res, next) => {
       if (course) {
         res.status(200).json(course);
       } else {
-        res.status(404).json({ message: 'The class could not be found' });
+        res.status(404).json(`class with id ${class_id} doesn't exist`);
       }
     })
     .catch(next);

@@ -169,7 +169,48 @@ Adds new class. Only logged in instructors can make this call.
 
 what it expects:
 
-{       "name": "Get Swoll5",
+{       "name": "Get Swoll3",
+        "type": "strength training4",
+        "start_time": "1:00pm",
+        "duration": "50 mins",
+        "level": "intermediate",
+        "location": "East Gym",
+        "attendees": "8",
+        "max_size": "10" }
+
+what you get back:
+ {
+        "instructor": {
+            "id": 1,
+            "username": "Foo"
+        },
+        "class_id": 2,
+        "name": "Get Swoll3",
+        "type": "strength training",
+        "start_time": "1:00pm",
+        "duration": "50 mins",
+        "level": "intermediate",
+        "location": "East Gym",
+        "attendees": "8",
+        "max_size": "10"
+    },
+```
+
+</details>
+
+---
+
+### PUT - Update Class
+
+<details>
+<summary>https://fittnesslambda.herokuapp.com/api/classes/:class_id</summary>
+
+```JSON
+Updates a class. Only logged in instructors can make this call.
+
+what it expects:
+
+{       "name": "Get Swoll3",
         "type": "strength training4",
         "start_time": "1:00pm",
         "duration": "50 mins",

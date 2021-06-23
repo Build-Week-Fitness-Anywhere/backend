@@ -126,3 +126,33 @@ what you get back:
 ````
 
 </details>
+
+---
+
+### GET - Delete Class by Id
+
+<details>
+<summary>https://fittnesslambda.herokuapp.com/api/classes/:class_id</summary>
+
+```JSON
+Delete class by specific id. Only instructor of the class can make this call.
+
+what you get back:
+ {
+        "instructor": {
+            "id": 1,
+            "username": "Foo"
+        },
+        "class_id": 2,
+        "name": "Get Swoll",
+        "type": "strength training",
+        "start_time": "1:00pm",
+        "duration": "50 mins",
+        "level": "intermediate",
+        "location": "East Gym",
+        "attendees": "8",
+        "max_size": "10"
+    },
+```
+
+</details>

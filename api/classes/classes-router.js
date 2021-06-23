@@ -74,8 +74,6 @@ router.delete(
         res.status(200).json(course);
       } else if (!course) {
         res.status(404).json(`class with id ${class_id} doesn't exist`);
-      } else {
-        res.status(401).json('user must be instructor for class');
       }
     } catch (err) {
       next(err);

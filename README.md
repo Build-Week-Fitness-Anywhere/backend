@@ -162,7 +162,7 @@ what you get back:
 ### POST - Add Class
 
 <details>
-<summary>https://fittnesslambda.herokuapp.com/api/classes/</summary>
+<summary>https://fittnesslambda.herokuapp.com/api/classes</summary>
 
 ```JSON
 Adds new class. Only logged in instructors can make this call.

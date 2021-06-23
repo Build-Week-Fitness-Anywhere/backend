@@ -22,8 +22,8 @@ exports.up = async (knex) => {
         .unsigned()
         .references('user_id')
         .inTable('users')
-        .onDelete('RESTRICT')
-        .onUpdate('RESTRICT');
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
     })
     .createTable('class_requests', (tbl) => {
       tbl.increments('class_request_id');
@@ -32,15 +32,15 @@ exports.up = async (knex) => {
         .unsigned()
         .references('user_id')
         .inTable('users')
-        .onDelete('RESTRICT')
-        .onUpdate('RESTRICT');
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
       tbl
         .integer('class_id')
         .unsigned()
         .references('class_id')
         .inTable('classes')
-        .onDelete('RESTRICT')
-        .onUpdate('RESTRICT');
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
       tbl.boolean('accepted').notNullable().defaultTo(false);
     });
 };

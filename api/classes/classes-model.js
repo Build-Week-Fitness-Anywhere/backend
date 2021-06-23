@@ -67,7 +67,21 @@ async function getClassById(class_id) {
   };
 }
 
+// async function addCourse(course) {
+//   const newCourse = getClassById();
+//   const stuff = await db('classes').insert(course, newCourse);
+//   return stuff;
+// }
+
+async function deleteById(class_id) {
+  const course = await getClassById(class_id);
+  await db('classes').where('class_id', class_id).del();
+  return course;
+}
+
 module.exports = {
   getClasses,
   getClassById,
+  deleteById,
+  //   addCourse,
 };

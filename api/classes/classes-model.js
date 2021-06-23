@@ -21,7 +21,7 @@ async function getClasses() {
     return {
       instructor: { id: classes.user_id, username: classes.username },
       class_id: classes.class_id,
-      name: classes.class_name,
+      name: classes.name,
       type: classes.type,
       start_time: classes.start_time,
       duration: classes.duration,

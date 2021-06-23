@@ -69,6 +69,7 @@ what you get back:
                 "username": "Foo"
             },
             "class_id": 2,
+            "name": "Get Swoll",
             "type": "strength training",
             "start_time": "1:00pm",
             "duration": "50 mins",
@@ -83,6 +84,7 @@ what you get back:
                 "username": "Foo"
             },
             "class_id": 1,
+            "name": "Pump up the Jam",
             "type": "cardio",
             "start_time": "8:00am",
             "duration": "50 mins",

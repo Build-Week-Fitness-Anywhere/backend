@@ -159,7 +159,7 @@ what you get back:
 
 ---
 
-### GET - Add Class
+### POST - Add Class
 
 <details>
 <summary>https://fittnesslambda.herokuapp.com/api/classes/</summary>

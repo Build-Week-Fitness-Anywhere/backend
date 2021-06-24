@@ -81,8 +81,6 @@ async function deleteById(class_id) {
 async function updateById(class_id, changes) {
   await db('classes').where('class_id', class_id).update(changes);
   return getClassById(class_id);
-  // const result = getClassById(class_id);
-  // return result;
 }
 
 module.exports = {

@@ -129,7 +129,7 @@ what you get back:
 
 ---
 
-### GET - Delete Class by Id
+### DELETE - Delete Class by Id
 
 <details>
 <summary>https://fittnesslambda.herokuapp.com/api/classes/:class_id</summary>

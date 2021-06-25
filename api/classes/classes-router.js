@@ -89,14 +89,26 @@ router.put(
   checkRole('instructor'),
   async (req, res, next) => {
     try {
-      const changes = req.body;
       const { class_id } = req.params;
       const user_id = req.decodedJwt.subject;
-      let course = await Classes.updateById(class_id, changes);
-      if (course && user_id === course.instructor.id) {
-        res.json(course);
-      } else if (!course) {
+      const existing = await Classes.getClassById(class_id);
+      if (existing && user_id === existing.instructor.id) {
+        const course = {
+          name: req.body.name,
+          type: req.body.type,
+          start_time: req.body.start_time,
+          duration: req.body.duration,
+          level: req.body.level,
+          location: req.body.location,
+          attendees: req.body.attendees,
+          max_size: req.body.max_size,
+        };
+        const updated = await Classes.updateById(class_id, course);
+        res.json(updated);
+      } else if (!existing) {
         res.status(404).json(`class with id ${class_id} doesn't exist`);
+      } else {
+        res.status(401).json('user must be instructor of the class');
       }
     } catch (err) {
       next(err);
@@ -118,6 +130,8 @@ router.delete(
         res.status(200).json(course);
       } else if (!course) {
         res.status(404).json(`class with id ${class_id} doesn't exist`);
+      } else {
+        res.status(401).json('user must be instructor of the class');
       }
     } catch (err) {
       next(err);

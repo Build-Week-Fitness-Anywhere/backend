@@ -69,19 +69,40 @@ router.post(
   }
 );
 
-router.put('/:class_id', (req, res, next) => {
-  const changes = req.body;
-  const { class_id } = req.params;
-  Classes.updateById(class_id, changes)
-    .then((course) => {
-      if (course) {
-        res.status(200).json(course);
-      } else {
+// router.put('/:class_id', (req, res, next) => {
+//   const changes = req.body;
+//   const { class_id } = req.params;
+//   Classes.updateById(class_id, changes)
+//     .then((course) => {
+//       if (course) {
+//         res.status(200).json(course);
+//       } else {
+//         res.status(404).json(`class with id ${class_id} doesn't exist`);
+//       }
+//     })
+//     .catch(next);
+// });
+
+router.put(
+  '/:class_id',
+  restricted,
+  checkRole('instructor'),
+  async (req, res, next) => {
+    try {
+      const changes = req.body;
+      const { class_id } = req.params;
+      const user_id = req.decodedJwt.subject;
+      let course = await Classes.updateById(class_id, changes);
+      if (course && user_id === course.instructor.id) {
+        res.json(course);
+      } else if (!course) {
         res.status(404).json(`class with id ${class_id} doesn't exist`);
       }
-    })
-    .catch(next);
-});
+    } catch (err) {
+      next(err);
+    }
+  }
+);
 
 router.delete(
   '/:class_id',
